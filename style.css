@@ -8,6 +8,11 @@
  box-sizing:border-box;
   
 }
+
+img
+{
+  size: 1px;
+}
 .outer
   {
     width: 100%;
@@ -29,9 +34,10 @@
     border-radius:30px;
     /* padding:15px; */
     text-align:center;
-    width: 100%;  
+    width: 250px;  
     color:white;
-    padding: 15px;
+    padding: 10px;
+    font-weight: 800;
 
   }
   a{
@@ -52,9 +58,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    /* padding: 20px; */
     width: 100%;
-    margin: 20px;
+    /* margin: 20px; */
+    gap:20px;
   }
   
   .title
@@ -123,6 +130,10 @@ h3{
     {
       flex-direction: column;
     }
+    .clearfix
+    {
+      flex-direction: column;
+    }
     
   }
    
@@ -174,11 +185,12 @@ button {
 /* Extra styles for the cancel button */
 .cancelbtn {
   padding: 14px 20px;
-  background-color: #f44336;
+  background-color: red;
 }
 .signupbtn {
   padding: 14px 20px;
-  background-color:rgb(59, 231, 59);
+  background: #00838d;
+  
 }
 
 /* Float cancel and signup buttons and add an equal width */
@@ -209,7 +221,7 @@ button {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
+  background-color: #93b4b9;
   padding-top: 50px;
 }
 
@@ -239,7 +251,7 @@ hr {
 
 .close:hover,
 .close:focus {
-  color: #f44336;
+  color: #000000;
   cursor: pointer;
 }
 
@@ -247,13 +259,22 @@ hr {
 .clearfix::after {
   content: "";
   clear: both;
-  display: table;
 }
+.clearfix
+{
+  /* background: orange; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
+
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
   .cancelbtn, .signupbtn {
      width: 100%;
+
   }
 }
 
@@ -317,9 +338,12 @@ hr {
 .nav > .nav-header > .nav-title {
   display: inline-block;
   font-size: 22px;
-  color: black;
-  padding: 10px 10px 10px 10px;
+  color: rgb(0, 0, 0);
+  /* padding: 10px 10px 10px 10px; 
+  width: 20%;*/
+  padding-left: 3px;
 }
+
 
 .nav > .nav-btn {
   display: none;
@@ -335,7 +359,7 @@ hr {
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
-  color: black;
+  color: rgb(82, 82, 82);
 }
 
 .nav > .nav-links > a:hover {
@@ -366,13 +390,13 @@ hr {
     display: block;
     width: 25px;
     height: 10px;
-    border-top: 2px solid black;
+    border-top: 2px solid rgb(82, 82, 82);
   }
   .nav > .nav-links {
     position: absolute;
     display: block;
     width: 100%;
-  background-color: #c8f2fa;
+    background-color: #c8f2fa;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
@@ -389,5 +413,34 @@ hr {
   .nav > #nav-check:checked ~ .nav-links {
     height: calc(100vh - 50px);
     overflow-y: auto;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 4rem;
+  overflow: hidden;
+  /* border: 1px solid black; */
+  padding: 0;
+  margin-bottom: 16px;
+}
+.lineUp {
+  animation: 4s anim-lineUp ease-out ;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
